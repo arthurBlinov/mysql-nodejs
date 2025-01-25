@@ -6,9 +6,7 @@ const register = (req, res) => {
     const q = "SELECT * FROM users where email = ?";
     
     db.query(q, [req?.body?.email], (err, data) => {
-        // console.log(err);
         if(err){
-            // console.log(data);
             return res.json(err)
         }
         if(data.length){
